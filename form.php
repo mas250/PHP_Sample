@@ -102,7 +102,7 @@ if(isset($_POST['submit'])) {
     Favorite color:
     <select name="color" name="name">
         <option value ="">Please select</option>
-        <option value ="#0f0"<?php
+        <option value ="#f00"<?php
             if ($color === '#f00'){
                 echo ' selected';
             }
@@ -112,11 +112,11 @@ if(isset($_POST['submit'])) {
                 echo ' selected';
             }
         ?>>blue</option>
-        <option value ="#0f0">green<?php
+        <option value ="#0f0"<?php
             if ($color === '#0f0'){
                 echo ' selected';
             }
-        ?></option>
+        ?>>green</option>
     </select><br>
     Languuages Spoken:
     <select name ="languages[]" multiple size="3">
