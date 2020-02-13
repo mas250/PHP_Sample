@@ -54,34 +54,50 @@ if(isset($_POST['submit'])) {
     }
 
 }
+readfile('header.tmpl.html');
 ?>
 
 <form
     action=""
-    method="post"
-    >
-    User name: <input type="text" name="name" value="<?php
+    method="post">
+    <div class="form-group">
+    <label for="name">User name:</label>
+    <input type="text" class="form-control" name="name" id="name" value="<?php
     echo htmlspecialchars($name, ENT_QUOTES);
     ?>"><br>
-    Password: <input type="password" name="password"><br>
-    Gender:
-        <input type="radio" name ="gender" value="f"<?php
+    </div>
+    <div class="form-group">
+    <label for="password">Password: </label>
+    <input type="password" class="form-control" name="password" id="password"><br>
+    </div>
+    <div class="form-group">
+    <div><label>Gender: </label></div>
+    <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name ="gender" id="gender-f" value="f"<?php
             if($gender === 'f'){
                 echo 'checked';
             }
-        ?>> Female
+        ?>> 
+        <label class="form-check-label" for="gender-f">Female</label>
+        </div>
         <input type="radio" name ="gender" value="m"<?php
             if($gender === 'm'){
                 echo 'checked';
             }
-        ?>> Male
-        <input type="radio" name ="gender" value="o"<?php
+        ?>> 
+        <label class="form-check-label" for="gender-m">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name ="gender" id="gender-o" value="o"<?php
             if($gender === 'o'){
                 echo 'checked';
             }
         ?>> Other<br>
-    Favorite color:
-    <select name="color" name="name">
+        </div>
+        </div>
+        <div class="form-group">
+    <label for="color">Favorite color:</label>
+    <select class="form-control" name="color" id="color">
         <option value ="">Please select</option>
         <option value ="#f00"<?php
             if ($color === '#f00'){
@@ -120,3 +136,7 @@ if(isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Register"><br>
 
 </form>
+
+<?php 
+    readfile('footer.tmpl.html');
+?>
