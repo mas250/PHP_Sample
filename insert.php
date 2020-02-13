@@ -37,6 +37,9 @@ if(isset($_POST['submit'])) {
 
 
     if($ok){
+
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
         $db = new mysqli(
             MySQL_HOST,
             MySQL_USER,
@@ -44,10 +47,12 @@ if(isset($_POST['submit'])) {
             MySQL_DATABASE
         );
             $sql = sprintf(
-                "INSERT INTO users(name, gender, color) VALUES('%s', '%s', '%s') ",
+                "INSERT INTO users(name, gender, color, hash) 
+                    VALUES('%s', '%s', '%s', '%s') ",
                 $db->real_escape_string($name),
                 $db->real_escape_string($gender),
-                $db->real_escape_string($color));
+                $db->real_escape_string($color),
+                $db->real_escape_string($hash));
             $db->query($sql);
             echo '<p>User added.</p>';
             $db->close();
@@ -94,7 +99,6 @@ readfile('header.tmpl.html');
             }
         ?>> Other<br>
         </div>
-        </div>
         <div class="form-group">
     <label for="color">Favorite color:</label>
     <select class="form-control" name="color" id="color">
@@ -133,7 +137,7 @@ readfile('header.tmpl.html');
 
     ?>>
     I accept the T&amp;C<br>
-    <input type="submit" name="submit" value="Register"><br>
+    <input type="submit" name="submit" class="btn btn-primary" value="Register"><br>
 
 </form>
 
