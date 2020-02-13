@@ -1,4 +1,5 @@
 <?php
+    require 'auth.inc.php';
     include 'config.inc.php';
     //delete.php?id=2
 
