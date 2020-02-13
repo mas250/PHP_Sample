@@ -1,11 +1,11 @@
 <ul>
     <?php
-
+        include 'config.inc.php';
         $db = new mysqli(
-            'localhost',
-            'root',
-            '',
-            'php'
+            MySQL_HOST,
+            MySQL_USER,
+            MySQL_PASSWORD,
+            MySQL_DATABASE
         );
 
         $sql = 'SELECT * FROM users';

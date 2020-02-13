@@ -1,4 +1,6 @@
 <?php
+include 'config.inc.php';
+
 $name = '';
 $password = '';
 $gender = '';
@@ -36,10 +38,11 @@ if(isset($_POST['submit'])) {
 
     if($ok){
         $db = new mysqli(
-            'localhost',
-            'root',
-            '',
-            'php');
+            MySQL_HOST,
+            MySQL_USER,
+            MySQL_PASSWORD,
+            MySQL_DATABASE
+        );
             $sql = sprintf(
                 "INSERT INTO users(name, gender, color) VALUES('%s', '%s', '%s') ",
                 $db->real_escape_string($name),

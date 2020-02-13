@@ -1,5 +1,5 @@
 <?php
-
+    include 'config.inc.php';
     //delete.php?id=2
 
     if(isset( $_GET['id'] ) && ctype_digit( $_GET['id'] )) {
@@ -10,10 +10,10 @@
     }
 
     $db = new mysqli(
-        'localhost',
-        'root',
-        '',
-        'php'
+        MySQL_HOST,
+        MySQL_USER,
+        MySQL_PASSWORD,
+        MySQL_DATABASE
     );
 
     $sql = "DELETE FROM users WHERE id=$id"; 
