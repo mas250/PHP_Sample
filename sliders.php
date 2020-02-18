@@ -7,9 +7,9 @@
 <body>
 
 
-
+<?php $step = 10 ?>
 <div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  <input type="range"  min="0" max="210" value="10" class="slider" id="myRange" step="10">
   <p>Value: <span id="demo"></span></p>
   <p>Range: <span id="range"></span></p>
 </div>
@@ -23,11 +23,68 @@ range.innerHTML = slider.value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
-  if(this.value < 50){ 
-    range.innerHTML = this.value * 2;
+  if(this.value == 0){ 
+    range.innerHTML = 250;
   }
-  if(this.value > 50 ){
-    range.innerHTML = 100;
+  
+  if(this.value > 1 && this.value < 75){ 
+    range.innerHTML = this.value * 10 +250;
+  }
+  if(this.value == 70){ 
+    range.innerHTML = 1000;
+  }
+
+  if(this.value > 70){ 
+    range.innerHTML = this.value * 100 +250;
+  }
+  
+  if(this.value == 70){ 
+    range.innerHTML = 1000;
+  }
+  if(this.value == 80){ 
+    range.innerHTML = 2000;
+  }
+  if(this.value == 90){ 
+    range.innerHTML = 3000;
+  }
+  if(this.value == 100){ 
+    range.innerHTML = 4000;
+  }
+  if(this.value == 110){ 
+    range.innerHTML = 5000;
+  }
+  if(this.value == 120){ 
+    range.innerHTML = 6000;
+  }
+  if(this.value == 130){ 
+    range.innerHTML = 7000;
+  }
+  if(this.value == 140){ 
+    range.innerHTML = 8000;
+  }
+  if(this.value == 150){ 
+    range.innerHTML = 9000;
+  }
+  if(this.value == 160){ 
+    range.innerHTML = 10000;
+  }
+  if(this.value == 170){ 
+    range.innerHTML = 11000;
+  }
+  if(this.value == 180){ 
+    range.innerHTML = 12000;
+  }
+  if(this.value == 190){ 
+    range.innerHTML = 13000;
+  }
+  if(this.value == 200){ 
+    range.innerHTML = 14000;
+  }
+  if(this.value == 200){ 
+    range.innerHTML = 14000;
+  }
+  if(this.value == 210){ 
+    range.innerHTML = 15000;
   }
   
 }
