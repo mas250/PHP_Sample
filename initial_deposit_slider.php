@@ -9,8 +9,10 @@
 <?php $step = 10 ?>
 <div class="slidecontainer">
   <input type="range"  min="0" max="200" value="100" class="slider" id="myRange" step="10">
+  
+  <span id="range">
   <p>Value: <span id="demo"></span></p>
-  <p>Range: <span id="range"></span></p>
+  
 </div>
 
 <script>
