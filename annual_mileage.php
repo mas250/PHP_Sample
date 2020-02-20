@@ -21,7 +21,7 @@ var output = document.getElementById("demo");
 var range = document.getElementById("range");
 
 output.innerHTML = slider.value;
-range.innerHTML = 4000;
+range.innerHTML = 20000;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
